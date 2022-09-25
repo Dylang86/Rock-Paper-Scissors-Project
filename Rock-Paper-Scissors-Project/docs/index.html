@@ -49,23 +49,23 @@
         function playRound(playerChoice, computerChoice) {
          //const draw = alert("Draw, no points awarded, play again!");
           if ((playerChoice == 1) && (computerChoice == 1)) {
-            return "Draw", gamePoints++;
+            return "Draw";
           } else if ((playerChoice == 1) && (computerChoice == 2)) {
-            return computerPoints++, "Computer Wins!", gamePoints++;
+            return "Computer Wins!";
           } else if ((playerChoice == 1) && (computerChoice == 3))  {
-            return playerPoints++, "Player Wins!", gamePoints++;
+            return "Player Wins!";
           } else if ((playerChoice == 2) && (computerChoice == 1)) {
-            return playerPoints++, "Player Wins!", gamePoints++;
+            return "Player Wins!";
           } else if ((playerChoice == 2) && (computerChoice == 2)) {
-            return "Draw!", gamePoints++;
+            return "Draw!";
           } else if ((playerChoice == 2) && (computerChoice == 3)) {
-            return computerPoints++, "Computer Wins!", gamePoints++;
+            return "Computer Wins!";
           } else if ((playerChoice == 3) && (computerChoice == 1)) {
-            return computerPoints++, "Computer Wins!", gamePoints++;
+            return "Computer Wins!";
           } else if ((playerChoice == 3) && (computerChoice == 2)) {
-            return playerPoints++, "Player Wins!", gamePoints++;
+            return "Player Wins!";
           } else if ((playerChoice == 3) && (computerChoice == 3)) {
-            return "Draw!", gamePoints++;
+            return "Draw!";
         }
         }
         let playerPoints = 0;
@@ -74,17 +74,28 @@
 
                    
         console.log(playRound(playerChoice, computerChoice));
-        console.log(playerPoints, "Player Points");
+        
+
+        function game() {
+        } for (let i = 0; i < 5; i++) { 
+                    (playRound(getPlayerChoice(prompt), computerChoice)); 
+                    if (playRound(playerChoice, computerChoice) === "Player Wins!") {
+                      playerPoints++, "Player Won that Round!";
+                    } else if (playRound(playerChoice, computerChoice) === "Computer Wins!") {
+                      computerPoints++, "Computer Won that Round!";
+                    }
+        
+            
+                                                            
+            console.log();
+            console.log();
+            console.log(getPlayerChoice());
+            console.log(getComputerChoice());
+            
+            }
+            console.log(playerPoints, "Player Points");
         console.log(computerPoints, "Computer Points");
         console.log(gamePoints, "Game Points");
-
-        function game(gamePoints) {
-          for (let i = 0; i < 5; i++) {
-            (getPlayerChoice()) && (getComputerChoice());
-            return gamePoints++;
-          }
-        }
-        console.log(game(gamePoints));
 
         //When a round is played check if the game has gone 5 rounds
         //If the game has not gone 5 rounds then play another round
