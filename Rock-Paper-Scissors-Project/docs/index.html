@@ -18,76 +18,84 @@
       //Allow 5 rounds to be played with the ability to track how many rounds each player has won, use a loop for this
       
       
-      //Rock = 1, x
-      //Paper = 2, y
-      //Scissors = 3, z
+      //Rock = 1
+      //Paper = 2
+      //Scissors = 3
+      
+      
       
       function getComputerChoice(a, b, c) {
         return computerChoice = Math.floor(Math.random() * 3) + 1;
         
         
       }
-      let computerPick = getComputerChoice(1, 2, 3)
+      let computerSelection = getComputerChoice(1, 2, 3)
         
            
-        function getPlayerChoice(playerSelection) {
-          if (playerSelection == "Rock") {
-            return playerChoice = 1;
-          } else if (playerSelection =="Paper") {
-            return playerChoice = 2;
-          } else if (playerSelection == "Scissors") {
-            return playerChoice = 3;
+        function getPlayerChoice() {
+          return playerChoice = prompt("Please enter Rock, Paper, or Scissors to play!");
           }
-        }
-        let playerSelection = prompt("Choose Rock, Paper, or Scissors to play!");
-        let playerPick = getPlayerChoice(playerSelection);
-        console.log(playerSelection);
-        console.log(playerPick);
-        //let draw = alert("Draw no points awarded, play again!");
-
+        
+       
+        //let playerSelection = prompt("Choose Rock, Paper, or Scissors to play!");
+        let playerSelection = getPlayerChoice("Rock", "Paper", "Scissors");
+        //let playerPick = getPlayerChoice(prompt());
+        
         function playRound(playerChoice, computerChoice) {
-         //const draw = alert("Draw, no points awarded, play again!");
-          if ((playerChoice == 1) && (computerChoice == 1)) {
-            return "Draw";
-          } else if ((playerChoice == 1) && (computerChoice == 2)) {
-            return "Computer Wins!";
-          } else if ((playerChoice == 1) && (computerChoice == 3))  {
-            return "Player Wins!";
-          } else if ((playerChoice == 2) && (computerChoice == 1)) {
-            return "Player Wins!";
-          } else if ((playerChoice == 2) && (computerChoice == 2)) {
+         if ((playerChoice == "Rock") && (computerChoice == 1)) {
             return "Draw!";
-          } else if ((playerChoice == 2) && (computerChoice == 3)) {
+          } else if ((playerChoice == "Rock") && (computerChoice == 2)) {
             return "Computer Wins!";
-          } else if ((playerChoice == 3) && (computerChoice == 1)) {
-            return "Computer Wins!";
-          } else if ((playerChoice == 3) && (computerChoice == 2)) {
+          } else if ((playerChoice == "Rock") && (computerChoice == 3))  {
             return "Player Wins!";
-          } else if ((playerChoice == 3) && (computerChoice == 3)) {
+          } else if ((playerChoice == "Paper") && (computerChoice == 1)) {
+            return "Player Wins!";
+          } else if ((playerChoice == "Paper") && (computerChoice == 2)) {
+            return "Draw!";
+          } else if ((playerChoice == "Paper") && (computerChoice == 3)) {
+            return "Computer Wins!";
+          } else if ((playerChoice == "Scissors") && (computerChoice == 1)) {
+            return "Computer Wins!";
+          } else if ((playerChoice == 'Scissors') && (computerChoice == 2)) {
+            return "Player Wins!";
+          } else if ((playerChoice == "Scissors") && (computerChoice == 3)) {
             return "Draw!";
         }
         }
+        
         let playerPoints = 0;
         let computerPoints = 0;
         let gamePoints = 0; 
-                                      
-        function game(gamePoints) {
-        } for (let i = 0; i < 5; i++) { 
-                     if (playRound(playerChoice, computerChoice) == "Player Wins!") {
-                       playerPoints++, gamePoints++;
-                    } else if (playRound(playerChoice, computerChoice) == "Computer Wins!") {
-                       computerPoints++, gamePoints++;
-                    } else if (playRound(playerChoice, computerChoice) == "Draw") {
-                      gamePoints++;
-                    }                                       
+
+        
           
-            console.log(playerSelection, "Player Choice");
-            console.log(getComputerChoice(), "Computer Choice");
-            console.log(playRound(playerChoice, computerChoice));
-            }
+        
+      function game(gamePoints) { 
+      } for (let i = 0; i < 5; i++) { 
+          if (playRound(playerChoice, computerChoice) === "Player Wins!") {
+                       (alert("Player Wins the Round!"), playerPoints++, gamePoints++, getPlayerChoice(), getComputerChoice());
+                    } else if (playRound(playerChoice, computerChoice) === "Computer Wins!") {
+                       (alert("Computer Wins the Round!"), computerPoints++, gamePoints++, getPlayerChoice(), getComputerChoice());
+                    } else if (playRound(playerChoice, computerChoice) === "Draw!") {
+                      (alert("Round Draw!"), gamePoints++, getPlayerChoice(), getComputerChoice());
+                    }                                       
+           
+        } 
+        
+        
+        if ((gamePoints == 5) && (computerPoints > playerPoints)) {
+          alert("Game Over, Computer Wins!");
+        } else if ((gamePoints == 5) && (computerPoints < playerPoints)) {
+          alert ("Game Over, Player Wins!");
+        } else if ((gamePoints == 5) && (computerPoints == playerPoints)) {
+          alert ("Game Over, Draw!")
+        }                  
+                     
+           
+           
         console.log(playerPoints, "Player Points");
         console.log(computerPoints, "Computer Points");
-        console.log(gamePoints, "Game Points");
+        console.log(gamePoints, "Game Rounds");
 
         
         //When a round is played check if the game has gone 5 rounds
@@ -98,7 +106,7 @@
     
 </html>
 
-//Rock = 1, x
-//Paper = 2, y
-//Scissors = 3, z
+//Rock = 1
+//Paper = 2
+//Scissors = 3
 
