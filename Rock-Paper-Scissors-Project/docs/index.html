@@ -22,7 +22,7 @@
       //Paper = 2
       //Scissors = 3
       
-      
+      let gamePoints = 0;
       
       function getComputerChoice(a, b, c) {
         return computerChoice = Math.floor(Math.random() * 3) + 1;
@@ -33,9 +33,10 @@
         
            
         function getPlayerChoice() {
+          if (gamePoints < 5) {
           return playerChoice = prompt("Please enter Rock, Paper, or Scissors to play!");
           }
-        
+        }
        
         //let playerSelection = prompt("Choose Rock, Paper, or Scissors to play!");
         let playerSelection = getPlayerChoice("Rock", "Paper", "Scissors");
@@ -65,12 +66,11 @@
         
         let playerPoints = 0;
         let computerPoints = 0;
-        let gamePoints = 0; 
-
+        //let gamePoints = 0; 
         
           
         
-      function game(gamePoints) { 
+      function game() { 
       } for (let i = 0; i < 5; i++) { 
           if (playRound(playerChoice, computerChoice) === "Player Wins!") {
                        (alert("Player Wins the Round!"), playerPoints++, gamePoints++, getPlayerChoice(), getComputerChoice());
